@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="kr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Enhanced Orbiting Circles</title>
+    <style>
+      canvas {
+        display: block;
+        margin: auto;
+        background: #222;
+        cursor: pointer;
+      }
+      #controls {
+        display: flex;
+        justify-content: center;
+        margin: 20px;
+      }
+      .control-panel {
+        margin: 0 10px;
+        padding: 10px;
+        background: #444;
+        color: white;
+        border-radius: 8px;
+      }
+      input[type="range"],
+      input[type="color"] {
+        width: 100%;
+      }
+      #controller input {
+        width: 60px;
+        margin: 5px;
+        padding: 5px;
+        font-size: 14px;
+      }
+      #controller label {
+        display: block;
+        margin-top: 10px;
+        font-size: 14px;
+      }
+    </style>
+  </head>
+  <body>
+    <canvas id="orbitCanvas"></canvas>
+    <div id="controls">
+      <div class="control-panel">
+        <label for="circleSelect">Select Circle:</label>
+        <select id="circleSelect"></select>
+      </div>
+      <div class="control-panel">
+        <label for="radiusControl">Circle Radius:</label>
+        <input
+          type="number"
+          id="radiusControl"
+          min="50"
+          max="200"
+          value="100"
+        />
+      </div>
+      <div class="control-panel">
+        <label for="orbitControl">Orbit Radius:</label>
+        <input type="number" id="orbitControl" min="50" max="300" value="150" />
+      </div>
+      <div class="control-panel">
+        <label for="colorControl">Circle Color:</label>
+        <input type="color" id="colorControl" value="#ff0000" />
+      </div>
+      <div
+        id="controller"
+        style="
+          right: 0;
+          top: 0;
+          width: 200px;
+          background: #333;
+          color: white;
+          padding: 10px;
+          overflow-y: auto;
+          height: 100%;
+        "
+      >
+        <h3>Circle Controller</h3>
+        <div id="circleInfo"></div>
+      </div>
+    </div>
+    <script src="orbit.js"></script>
+  </body>
+</html>
